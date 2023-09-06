@@ -109,7 +109,7 @@ const Wedding = () => {
     paramsForm.append('message_status', 0);
 
     // submit the form
-    fetch('https://weddingappapi.onrender.com/greeting/create', {
+    fetch('https://web-intractive-system-app-api.onrender.com/greeting/create', {
       method: 'POST',
       body: paramsForm,
       headers: {
@@ -162,7 +162,7 @@ const Wedding = () => {
     setParams(params.get('room'));
     // get the room setting
     const fetchData = async () => {
-      const response = await fetch(`https://weddingappapi.onrender.com/roomSetting/get/${params.get('room')}`);
+      const response = await fetch(`https://web-intractive-system-app-api.onrender.com/roomSetting/get/${params.get('room')}`);
       const resp = await response.json();
       // set the room setting
       setSettings({
@@ -177,7 +177,7 @@ const Wedding = () => {
         loaded: true
       });
       // get the room status
-      const roomResp = await fetch(`https://weddingappapi.onrender.com/room/get/${params.get('room')}`);
+      const roomResp = await fetch(`https://web-intractive-system-app-api.onrender.com/room/get/${params.get('room')}`);
       const room = await roomResp.json();
       if (room.room_status === 0) {
         setModalShow({
