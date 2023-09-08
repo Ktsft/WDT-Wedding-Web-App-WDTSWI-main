@@ -216,9 +216,9 @@ const Wedding = () => {
       'backgroundImage': `url("${settings.background}")`
     }}>
       {settings.loaded && <>
-        {settings.logo && <header className="text-center">
+        {/* {settings.logo && <header className="text-center">
           <img src={settings.logo} alt="logo" className="inline-block" />
-        </header>}
+        </header>} */}
         <div className="max-w-md m-auto pb-0 pt-5">
           <div className="text-center pl-5 pr-5">
             <img src={settings.mainImg} alt="cover" className="inline-block w-60" />
