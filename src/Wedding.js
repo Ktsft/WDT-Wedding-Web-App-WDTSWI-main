@@ -164,17 +164,21 @@ const Wedding = () => {
     const fetchData = async () => {
       const response = await fetch(`https://web-intractive-system-app-api.onrender.com/roomSetting/get/${params.get('room')}`);
       const resp = await response.json();
-      console.log("background image: ", resp.background_img);
+      //console.log("background image: ", resp.background_img);
       if (resp.background_img == 0) {
         resp.background_img = "../image/bg1.png";
       }
 
-      if (resp.app_logo_img == 0) {
-        resp.app_logo_img = "../image/mobile_event pic.png"
+      if (resp.cover_photo_img == 0) {
+        resp.cover_photo_img = "../image/mobile_event pic.png";
       }
 
       if (resp.submit_button == 0) {
-        resp.submit_button = "../image/mobile_send btn.png"
+        resp.submit_button = "../image/mobile_send btn.png";
+      }
+
+      if (resp.app_logo_img == 0) {
+        resp.app_logo_img = "../image/logo_wd_tech.png";
       }
       // set the room setting
       setSettings({
@@ -228,15 +232,15 @@ const Wedding = () => {
       'backgroundImage': `url("${settings.background}")`
     }}>
       {settings.loaded && <>
-        {settings.logo && <header className="text-center">
+        {/* {settings.logo && <header className="text-center">
           <img src={settings.logo} alt="logo" className="inline-block"
             style={{
-              width: '15%',
+              width: '10%',
               height: 'auto', // This ensures the aspect ratio is maintained
               maxWidth: 'none', // This overrides any max-width styles that may be affecting it
             }}
           />
-        </header>}
+        </header>} */}
         <div className="max-w-md m-auto pb-0 pt-5">
           <div className="text-center pl-5 pr-5">
             <img src={settings.mainImg} alt="cover" className="inline-block w-60" />
